@@ -21,9 +21,9 @@
 
 from collections import defaultdict
 def GroupAnagram(strs):
-    anagram_map = defaultdict(list)
+    anagram_map = defaultdict(list) # {} -> this automatically groups the anagram if sorted word i not there it by default crates one
     for word in strs:
-        sorted_word = ''.join(sorted(word))
-        anagram_map[sorted_word].append(word)
+        sorted_word = ''.join(sorted(word)) # cat -> sorted to 'a','c','t' -> joined "act"
+        anagram_map[sorted_word].append(word) # anagram_map["act"].append("cat")
     return list(anagram_map.values())
 print(GroupAnagram(["act","pots","tops","cat","stop","hat"]))
